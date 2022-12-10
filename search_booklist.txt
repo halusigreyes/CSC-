@@ -1,0 +1,70 @@
+<body>
+<div class="logo"> 
+</div>
+
+<ul class="main-nav">
+        <li><a href="home.php">HOME</a></li>
+        <li><a href="about.php">ABOUT</a></li>
+        <li><a href="booklist.php">LIST BOOKING</a></li>
+		<li><a href="search_booklist.php">SEARCH BOOKING</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="profile.php">PROFILE</a></li>
+        <li><a href="logout.php">LOG OUT</a></li>
+    </ul>
+		<div class="container">
+			<br />
+			<br />
+			<br />
+			<h2 align="center">SEARCH CUSTOMER'S DETAILS</h2><br />
+			<div class="search_wrap search_wrap_1">
+				<div class="search_box">
+				<input type="text" name="search_text" id="search_text" class="input" placeholder="Search by Customer Details">
+				<div class="btn" align="center">SEARCH<br>INFO</div>
+				</div>
+			</div>
+			
+			<br />
+			<div id="result"></div>
+		</div>
+		<div style="clear:both"></div>
+		<br />
+
+<center>
+<a href="booklist.html" target="_self"><button class="button" name="update">UPDATE</button></a>&nbsp;
+<button onclick="window.print()" class="button" name="Print">PRINT</button>
+
+		<br />
+		<br />
+
+	</body>
+</html>
+
+<script>
+$(document).ready(function(){
+	load_data();
+	function load_data(query)
+	{
+		$.ajax({
+			url:"fetch_search.php",
+			method:"post",
+			data:{query:query},
+			success:function(data)
+			{
+				$('#result').html(data);
+			}
+		});
+	}
+	
+	$('#search_text').keyup(function(){
+		var search = $(this).val();
+		if(search != '')
+		{
+			load_data(search);
+		}
+		else
+		{
+			load_data();			
+		}
+	});
+});
+</script>

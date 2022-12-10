@@ -1,0 +1,64 @@
+<div class="logo"> 
+</div>
+
+<ul class="main-nav">
+        <li><a href="home.php">HOME</a></li>
+        <li><a href="about.php">ABOUT</a></li>
+        <li><a href="booklist.php">LIST BOOKING</a></li>
+        <li><a href="search_booklist.php">SEARCH BOOKING</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="profile.php">PROFILE</a></li>
+        <li><a href="logout.php">LOG OUT</a></li>
+    </ul>
+
+	<br>
+<table>
+   <thead>
+   <tr>
+   <th>Customer IC Number</th>
+   <th>Age</th>
+   <th>Address</th>
+   <th>Package</th> 
+   <th>Date</th>
+   <th>Total payment</th>
+   </tr>
+   </thead>
+
+   <?php
+	$i=0;
+	while($row = mysqli_fetch_array($result)) {
+	?>
+
+<tbody>
+   <tr>
+   <td><?php echo $row['IcNum']; ?></td>
+   <td><?php echo $row['Age'];  ?></td>
+   <td><?php echo $row['Address']; ?></td>
+   <td><?php echo $row['Package']; ?></td>
+   <td><?php echo $row['Date']; ?></td>
+   <td><?php echo $row['Total payment']; ?></td>
+   <td><a href="delete.php?IcNum=<?php echo $row["IcNum"]; ?>">Delete</a></td>
+   
+   </tr>
+   <?php
+	$i++;
+	}
+	?>
+</tbody>
+</table>
+
+<br>
+<center>
+<a href="search_booklist.php" target="_self"><button class="button" name="Done">Done</button></div>
+</center>
+
+<section>
+</section>
+
+<br>
+
+<div class="section2">
+</div>
+
+</body>
+</html>

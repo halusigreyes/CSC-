@@ -1,0 +1,39 @@
+<section>
+		<div class="imgClub">
+			<img src="pool.jpg">
+		</div>
+		<div class="clubA">
+			<div class="clubB">
+				<h2>Login</h2>
+				<form class="form" method="POST">
+					<div class="clubC">
+						<span>Username</span>
+						<input type="text" name="AdminIC" required>
+					</div>
+					<div class="clubC">
+						<span>Password</span>
+						<input type="password" name="AdminPass" required>					
+					</div>
+					<div class="remember">
+						<label><input type="checkbox" name=""> Remember Me</label>
+					</div>
+					<div class="clubC">
+						<input type="submit" value="Sign in" name="">
+					</div>
+					<div class="clubC">
+						<h6><p>*Login username via IC Number</p></h6>
+					</div>					
+					<div class="clubC">
+						<p><a href="forgotpswrd.php">Forgot your password?</a></p>
+					</div>
+					<div class="clubC">
+						<p>Don't have an account? <a href="registration.php">Sign up</a></p>
+						<p><a href="index.php">BACK</a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>	
+	
+</body>
+</html>
